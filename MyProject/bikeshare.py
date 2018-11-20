@@ -51,8 +51,8 @@ def get_month():
     '''Asks the user for a month and returns the specified month.
         '''
     month_input = ''
-    months_dict = {'january': 0, 'february': 1, 'march': 2, 'april': 3,
-                   'may': 4, 'june': 5}
+    months_dict = {'january': 1, 'february': 2, 'march': 3, 'april': 4,
+                   'may': 5, 'june': 6}
     while month_input.lower() not in months_dict.keys():
         month_input = input('\nWhich month? January, February, March, April,'
                             ' May, or June?\n')
@@ -70,7 +70,7 @@ def get_day():
         (tuple) Lower limit, upper limit of date for the bikeshare data.
     '''
     this_month = get_month()[0]
-    month = int(this_month[4:])
+    month = int(this_month[5:])
     valid_date = False
     while valid_date == False:
         isFalse = False
@@ -258,12 +258,7 @@ def display_data(df):
 
 
 def statistics():
-    '''Calculates and prints out the descriptive statistics about a city and
-    time period specified by the user via raw input.
-    Args:
-        none.
-    Returns:
-        none.
+    '''caclulates statistics based on users input
     '''
     # Filter by city (Chicago, New York, Washington)
     city = get_city()
