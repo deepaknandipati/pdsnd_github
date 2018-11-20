@@ -22,8 +22,8 @@ def get_city():
     '''
     city = ''
     while city.lower() not in ['chicago', 'new york', 'washington']:
-        city = input('\nHello! Let\'s explore some USA bikeshare data!\n'
-                     'Would you like to see data for Chicago, New York, or'
+        city = input('\nHello There! Let\'s explore some USA bikeshare data!\n'
+                     'Please type the city you want to view information about: Chicago, New York, or'
                      ' Washington?\n')
         if city.lower() == 'chicago' :
             return 'chicago.csv'
@@ -36,11 +36,8 @@ def get_city():
                   'Chicago, New York, or Washington.')
 
 def get_time_period():
-    '''Asks the user for a time period and returns the specified filter.
-    Args:
-        none.
-    Returns:
-        (str) Time filter for the bikeshare data.
+    '''this will ask the user for a time period and returns the specified filter.
+
     '''
     time_period = ''
     while time_period.lower() not in ['month', 'day', 'none']:
@@ -52,14 +49,10 @@ def get_time_period():
 
 def get_month():
     '''Asks the user for a month and returns the specified month.
-    Args:
-        none.
-    Returns:
-        (tuple) Lower limit, upper limit of month for the bikeshare data.
-    '''
+        '''
     month_input = ''
-    months_dict = {'january': 1, 'february': 2, 'march': 3, 'april': 4,
-                   'may': 5, 'june': 6}
+    months_dict = {'january': 0, 'february': 1, 'march': 2, 'april': 3,
+                   'may': 4, 'june': 5}
     while month_input.lower() not in months_dict.keys():
         month_input = input('\nWhich month? January, February, March, April,'
                             ' May, or June?\n')
@@ -77,7 +70,7 @@ def get_day():
         (tuple) Lower limit, upper limit of date for the bikeshare data.
     '''
     this_month = get_month()[0]
-    month = int(this_month[5:])
+    month = int(this_month[4:])
     valid_date = False
     while valid_date == False:
         isFalse = False
@@ -100,11 +93,7 @@ def get_day():
 
 def popular_month(df):
     '''Finds and prints the most popular month for start time.
-    Args:
-        bikeshare dataframe
-    Returns:
-        none
-    '''
+        '''
     months = ['January', 'February', 'March', 'April', 'May', 'June']
     index = int(df['start_time'].dt.month.mode())
     most_pop_month = months[index - 1]
@@ -112,11 +101,7 @@ def popular_month(df):
 
 def popular_day(df):
     '''Finds and prints the most popular day of week (Monday, Tuesday, etc.) for start time.
-    Args:
-        bikeshare dataframe
-    Returns:
-        none
-    '''
+        '''
     days_of_week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday',
                     'Saturday', 'Sunday']
     index = int(df['start_time'].dt.dayofweek.mode())
