@@ -5,7 +5,7 @@
 
 
 ### Description
-My project is about bikeshare data of major cities: Chicago, New York and Washington. 
+My project is about bikeshare data of major cities: Chicago, New York and Washington. The file executes a user-interactive program which manipulated data based on users input.
 
 ### Files used
 MyProjects|
