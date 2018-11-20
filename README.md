@@ -5,7 +5,7 @@
 
 
 ### Description
-Describe what your project is about and what it does
+My project is about bikeshare data of major cities: Chicago, New York and Washington. 
 
 ### Files used
 MyProjects|
